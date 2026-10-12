@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [{ source: "/services", destination: "/tedaviler", permanent: false }];
+  },
+  transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
