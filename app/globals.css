@@ -25,6 +25,36 @@ html {
   scroll-behavior: smooth;
 }
 
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #c4a35a #07111f;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07111f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e8d5a3, #c4a35a 50%, #9a7b3c);
+  border: 2px solid #07111f;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f3e7c8, #d4bc7d 50%, #c4a35a);
+}
+
+::-webkit-scrollbar-corner {
+  background: #07111f;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
